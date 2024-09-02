@@ -1,28 +1,26 @@
-import { useEffect, useState } from "react";
-import { fetchWeatherData } from "./api/apiRequest";
+import { useContext } from "react";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
-function App() {
-  const [weatherData, setWeatherData] = useState(null);
-  const [cityName, setCityName] = useState("new york");
-  useEffect(() => {
-    const getWeatherData = async () => {
-      try {
-        const data = await fetchWeatherData(cityName);
-        setWeatherData(data);
-      } catch (e) {
-        console.log(e.message);
-      }
-    };
+import WeatherContext from "./context/WeatherContext";
 
-    getWeatherData();
-  }, []);
+function App() {
+  const { weatherData, errorMessage } = useContext(WeatherContext);
+  const informationStyle = {
+    textAlign: "center",
+    color: "red",
+    marginTop: "12px",
+  };
 
   return (
     <div className="App">
       <main className="main">
         <Form />
-        <Weather/>
+        {errorMessage && <p style={informationStyle}>{errorMessage}</p>}
+        {!errorMessage && weatherData ? (
+          <Weather />
+        ) : (
+          <p style={informationStyle}>Search city to display data</p>
+        )}
       </main>
     </div>
   );
