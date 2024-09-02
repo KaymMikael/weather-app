@@ -5,15 +5,20 @@ function App() {
   const [cityName, setCityName] = useState("mataasnakahoy");
   useEffect(() => {
     const getWeatherData = async () => {
-      const data = await fetchWeatherData(cityName);
-      setWeatherData(data);
-    }
+      try {
+        const data = await fetchWeatherData(cityName);
+        setWeatherData(data);
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
+
     getWeatherData();
-  },[]);
+  }, []);
 
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <p>{JSON.stringify(weatherData)}</p>
     </div>
   );
 }
