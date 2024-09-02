@@ -58,17 +58,30 @@ img {
   text-align: center;
 }
 
-.weather-data{
+.weather-data {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.weather-condition{
+.weather-condition {
   text-align: center;
 }
 
-.weather-degrees{
+.weather-degrees {
   text-align: center;
 }
 
+.sun-data {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.sun-container {
+  text-align: center;
+}
+
+.sun-icon {
+  max-width: 100px;
+}

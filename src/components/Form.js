@@ -1,6 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 
-const Form = () => {
+const Form = ({weather, setWeather}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submitted");

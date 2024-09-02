@@ -4,7 +4,7 @@ import Form from "./components/Form";
 import Weather from "./components/Weather";
 function App() {
   const [weatherData, setWeatherData] = useState(null);
-  const [cityName, setCityName] = useState("mataasnakahoy");
+  const [cityName, setCityName] = useState("new york");
   useEffect(() => {
     const getWeatherData = async () => {
       try {

@@ -1,4 +1,4 @@
-const convertUnixToTime = (unixTimeStamp) => {
+export const convertUnixToTime = (unixTimeStamp) => {
     const milliSeconds = unixTimeStamp * 1000; //convert to milliseconds
     const date = new Date(milliSeconds);
     
@@ -11,5 +11,3 @@ const convertUnixToTime = (unixTimeStamp) => {
     
     return `${hours}:${formattedMinutes} ${ampm}`;
 }
-
-console.log(convertUnixToTime(1725271609));
