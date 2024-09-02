@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchWeatherData } from "./api/apiRequest";
+import Form from "./components/Form";
 function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [cityName, setCityName] = useState("mataasnakahoy");
@@ -18,7 +19,9 @@ function App() {
 
   return (
     <div className="App">
-      <p>{JSON.stringify(weatherData)}</p>
+      <main className="main">
+        <Form />
+      </main>
     </div>
   );
 }
